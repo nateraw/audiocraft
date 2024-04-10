@@ -21,3 +21,5 @@ gradio
 torchmetrics
 encodec
 protobuf
+hf-transfer>=0.1.6
+wandb
