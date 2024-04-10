@@ -93,7 +93,7 @@ class SegmentInfo(BaseInfo):
     channels: int      # number of audio channels.
 
 
-DEFAULT_EXTS = ['.wav', '.mp3', '.flac', '.ogg', '.m4a']
+DEFAULT_EXTS = ['.wav', '.mp3', '.flac', '.ogg', '.m4a', '.opus']
 
 logger = logging.getLogger(__name__)
 
