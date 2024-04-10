@@ -24,3 +24,4 @@ protobuf
 hf-transfer>=0.1.6
 wandb
 pytorch-lightning==2.2.1
+tensorboard

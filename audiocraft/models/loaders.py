@@ -107,7 +107,10 @@ def load_lm_model(file_or_url_or_id: tp.Union[Path, str], device='cpu', cache_di
     if cfg.device == 'cpu':
         cfg.dtype = 'float32'
     else:
-        cfg.dtype = 'float16'
+        # HACK - load in float32 for lightning compatibility
+        # cfg.dtype = 'float16'
+        cfg.dtype = 'float32'
+
     _delete_param(cfg, 'conditioners.self_wav.chroma_stem.cache_path')
     _delete_param(cfg, 'conditioners.args.merge_text_conditions_p')
     _delete_param(cfg, 'conditioners.args.drop_desc_p')
@@ -126,7 +129,9 @@ def load_lm_model_magnet(file_or_url_or_id: tp.Union[Path, str], compression_mod
     if cfg.device == 'cpu':
         cfg.dtype = 'float32'
     else:
-        cfg.dtype = 'float16'
+        # HACK - load in float32 for lightning compatibility
+        # cfg.dtype = 'float16'
+        cfg.dtype = 'float32'
     _delete_param(cfg, 'conditioners.args.merge_text_conditions_p')
     _delete_param(cfg, 'conditioners.args.drop_desc_p')
 
