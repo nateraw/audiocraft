@@ -360,6 +360,7 @@ def get_audio_datasets(cfg: omegaconf.DictConfig,
             seed=seed,
             collate_fn=dataset.collater if return_info else None,
             shuffle=shuffle,
+            pin_memory=True,
         )
         dataloaders[split] = loader
 
